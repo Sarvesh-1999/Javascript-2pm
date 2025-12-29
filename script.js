@@ -99,30 +99,68 @@ There are 2 types of datatype
 // var a1 = 10;
 // console.log(a1); // 10
 
-//! 3 WAYS OF DECLARING A VARIABLE
-// 1) var
+// //! 3 WAYS OF DECLARING A VARIABLE
+// // 1) var
 
-var a; // declare
-console.log(a); // ud
+// var a; // declare
+// console.log(a); // ud
 
-a = 10 // initialize
-console.log(a); // 10
+// a = 10; // initialize
+// console.log(a); // 10
 
-var a ; //re-declare
-console.log(a); // 10
+// var a; //re-declare
+// console.log(a); // 10
 
-a = 20 // re-initialize
-console.log(a); // 20
+// a = 20; // re-initialize
+// console.log(a); // 20
 
-var b = 30 // declare and initialize
-console.log(b); // 30
+// var b = 30; // declare and initialize
+// console.log(b); // 30
 
-var b = 40 // re-declare and re-initialize
-console.log(b); // 40
+// var b = 40; // re-declare and re-initialize
+// console.log(b); // 40
+
+// // 2) let
+// let c;
+// console.log(c); // ud
+
+// c = 100;
+// console.log(c); // 100
+
+// // let c ;//! cannot re-declare
+
+// c = 200;
+// console.log(c); //200
+
+// let d = 300;
+// console.log(d); // 300
+
+// // let d = 400 //! cannot re-declare and re-initialize
+
+// // 3) const
+// const e = 1000
+// console.log(e); // 1000
+//! TEMPORAL DEAD ZONE : Time period between accessing a let/const variable before declaration
+
+// let x //! HOISTED BUT VARIABLE IS EMPTY
+// console.log(x);// ! NOT POSSIBLE DUE TO TDZ
+
+// let x = 100;
+// console.log(x);
+
+//! GEC - GLOBAL EXECUTION CONTEXT
+debugger;
+console.log("start");
+console.log(a);
+var x;
+console.log(x);
+x = 100;
+var a;
+console.log(b);
+a = x;
+var b = 800
+console.log(b);
+console.log("End");
+// console.log(c);
 
 
-
-
-
-// 2) let 
-// 3) const
