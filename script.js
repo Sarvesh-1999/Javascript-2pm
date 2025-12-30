@@ -149,18 +149,113 @@ There are 2 types of datatype
 // console.log(x);
 
 //! GEC - GLOBAL EXECUTION CONTEXT
-debugger;
-console.log("start");
-console.log(a);
-var x;
-console.log(x);
-x = 100;
-var a;
-console.log(b);
-a = x;
-var b = 800
-console.log(b);
-console.log("End");
-// console.log(c);
+// debugger;
+// console.log("start");
+// console.log(a);
+// var x;
+// console.log(x);
+// x = 100;
+// var a;
+// console.log(b);
+// a = x;
+// var b = 800
+// console.log(b);
+// console.log("End");
+// // console.log(c);
 
+// debugger;
+// console.log("Start");
+// console.log(x);
+// var z = 100;
+// console.log(x, z);
+// z = 500;
+// console.log(b, x);
+// var x;
+// console.log(x);
+// var z;
+// console.log(z);
+// z = 700;
+// console.log(b, x, z);
+// var b = 800;
+// console.log("End");
 
+//! THERE ARE 2 TYPES OF VARIABLES
+//! 1) GLOBAL VARIABLE : a variable that can be accessed globally throughout the code
+
+// var a1 = 10; // GLOBAL SCOPE <---- due to hoisting
+// let b1 = 20; // SCRIPT SCOPE <---- due to TDZ
+// const c1 = 30; // SCRIPT SCOPE <---- due to TDZ
+
+// if (10 > 2) {
+//   console.log(a1, b1, c1);
+// }
+
+// for (let i = 0; i < 5; i++) {
+//   console.log(a1, b1, c1);
+// }
+
+// function demo1() {
+//   console.log(a1, b1, c1);
+// }
+// demo1();
+
+//! 2) LOCAL VARIABLE
+
+// if (100 > 2) {
+//   var x1 = 100; // GLOBAL VARIABLE - GLOBAL SCOPE
+//   let x2 = 200; // LOCAL VARIABLE - BLOCK SCOPE
+//   const x3 = 300; // LOCAL VARIABLE - BLOCK SCOPE
+//   console.log(x1, x2, x3);
+// }
+// console.log(x1); // 100
+// // console.log(x2);//! x2 is not defined
+
+// function demo2() {
+//   var a1 = 1000; // LOCAL VARIABLE - LOCAL SCOPE
+//   let a2 = 2000; // LOCAL VARIABLE - LOCAL SCOPE
+//   const a3 = 3000; // LOCAL VARIABLE - LOCAL SCOPE
+//   console.log(a1, a2, a3);
+// }
+// demo2();
+
+// console.log("Start");
+// console.log(a);
+// let b = 100;
+// var a = 200;
+// console.log(a, b);
+// const c = b + a;
+// console.log(c, b, a);
+// let d;
+// console.log(d);
+// d = c;
+// console.log(c, d);
+// console.log("End");
+
+//! FUNCTIONS
+
+//! 1) NAMED FUNCTION : function which has name
+// NOTE: Function hoisting is possible only in named function
+
+//! internally hoisted
+// function greet() {
+//   console.log("Welcome");
+// }
+greet(); // due to hoisting
+function greet() {
+  console.log("Welcome");
+}
+greet(); // function call
+
+//! 2) ANONYMOUS FUNCTION : function without name
+// function(){}
+
+//! 3) FUNCTION EXPRESSION : used to call anonymous function
+console.log(a1);
+a1();
+
+var a1 = function () {
+  console.log("Function Expression");
+};
+
+console.log(a1);
+a1();
