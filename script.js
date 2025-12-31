@@ -240,22 +240,69 @@ There are 2 types of datatype
 // function greet() {
 //   console.log("Welcome");
 // }
-greet(); // due to hoisting
-function greet() {
-  console.log("Welcome");
-}
-greet(); // function call
+// greet(); // due to hoisting
+// function greet() {
+//   console.log("Welcome");
+// }
+// greet(); // function call
 
 //! 2) ANONYMOUS FUNCTION : function without name
 // function(){}
 
 //! 3) FUNCTION EXPRESSION : used to call anonymous function
-console.log(a1);
-a1();
+// console.log(a1);
+// a1();
 
-var a1 = function () {
-  console.log("Function Expression");
-};
+// var a1 = function () {
+//   console.log("Function Expression");
+// };
 
-console.log(a1);
-a1();
+// console.log(a1);
+// a1();
+
+//! GEC
+// console.log("Start");
+// var a = 10;
+// console.log(a, b);
+// let c;
+// console.log(c, b);
+// demo1();
+// var b = function () {
+//   console.log("Welcome");
+// };
+// console.log(b);
+// b();
+// function demo1() {
+//   console.log("Demo 1");
+// }
+// console.log(demo1);
+// console.log("End");
+
+//! 4) PARAMETRIZED FUNCTION
+// function sum(n1 = 0, n2 = 0, n3 = 0) {
+//   let res = n1 + n2 + n3;
+//   console.log(res);
+// }
+// sum(10, 20, 30);
+// sum(100, 200);
+// sum();
+
+//! 5) REST-PARAMETRIZED FUNCTION
+// function demo3(n1, n2, ...rest) {
+//   console.log(n1, n2); // 10 20
+//   console.log(rest); // [30,40,50] <--- pure array
+//   console.log(arguments); // [10,20,30,40,50,....] <--- array-like object (impure)
+// }
+// demo3(10, 20, 30, 40, 50);
+
+//! 6) RETURN-TYPE FUNCTION
+function getFullName(fname = "", lname = "") {
+  let fullName = `${fname} ${lname}`;
+  return fullName;
+}
+
+function displayName() {
+  let value = getFullName("John", "Doe");
+  document.writeln(`<h2><em>${value}</em></h2>`);
+}
+displayName();
