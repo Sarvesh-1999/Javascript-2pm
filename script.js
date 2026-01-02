@@ -296,13 +296,109 @@ There are 2 types of datatype
 // demo3(10, 20, 30, 40, 50);
 
 //! 6) RETURN-TYPE FUNCTION
-function getFullName(fname = "", lname = "") {
-  let fullName = `${fname} ${lname}`;
-  return fullName;
+// function getFullName(fname = "", lname = "") {
+//   let fullName = `${fname} ${lname}`;
+//   return fullName;
+// }
+
+// function displayName() {
+//   let value = getFullName("John", "Doe");
+//   document.writeln(`<h2><em>${value}</em></h2>`);
+// }
+// displayName();
+
+//! 7) NESTED FUNCTION
+
+//? EXAMPLE 1
+// function parent() {
+//   console.log("I Am Parent");
+
+//   function child() {
+//     console.log("I Am Child");
+//   }
+
+//   child();
+// }
+// parent();
+
+//? EXAMPLE 2
+// function parent() {
+//   let money = 80000;
+//   console.log(money);
+
+//   function child() {
+//     let savings = 1000;
+//     console.log(savings);
+//   }
+
+//   child();
+// }
+// parent();
+
+//! CLOSURE : its a memory which is created whenever we try to access parent functions property inside child function
+
+//! LEXICAL SCOPING : the ability of js engine to search a variable outside its current scope
+
+//? EXAMPLE 3
+// function parent() {
+//   let money = 80000;
+//   console.log(money);
+
+//   function child() {
+//     let savings = 1000;
+//     console.log(savings + money); // money can be accessed due to closure
+//   }
+
+//   child();
+// }
+// parent();
+
+//? EXAMPLE 4
+// function parent() {
+//   let money = 80000;
+//   console.log(money);
+
+//   function child() {
+//     let savings = 1000;
+//     console.log(savings + money); // money can be accessed due to closure
+//   }
+
+//   return child;
+
+// }
+// let val = parent();
+// console.log(val);
+// val()
+
+//! HIGHER ORDER FUNCTION : A function which can perform atleast one of these task
+//! 1) it can accepts another function as arguement
+//! 2) returns a function
+
+// calculate is HOF
+function calculate(a, b, operation) {
+  return operation(a, b);
 }
 
-function displayName() {
-  let value = getFullName("John", "Doe");
-  document.writeln(`<h2><em>${value}</em></h2>`);
+function add(n1, n2) {
+  return n1 + n2;
 }
-displayName();
+
+function substract(n1, n2) {
+  return n1 - n2;
+}
+
+let val1 = calculate(10, 20, add);
+console.log(val1);
+
+let val2 = calculate(100, 50, substract);
+console.log(val2);
+
+//! HOF : returning a function
+function greet(message) {
+  return function (name) {
+    return `${message} ${name}`;
+  };
+}
+
+let val3 = greet("Welcome");
+console.log(val3("John"));
