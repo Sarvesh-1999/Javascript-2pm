@@ -370,35 +370,107 @@ There are 2 types of datatype
 // console.log(val);
 // val()
 
-//! HIGHER ORDER FUNCTION : A function which can perform atleast one of these task
+//! 8) HIGHER ORDER FUNCTION : A function which can perform atleast one of these task
 //! 1) it can accepts another function as arguement
 //! 2) returns a function
 
 // calculate is HOF
-function calculate(a, b, operation) {
-  return operation(a, b);
-}
+// function calculate(a, b, operation) {
+//   return operation(a, b);
+// }
 
-function add(n1, n2) {
-  return n1 + n2;
-}
+// function add(n1, n2) {
+//   return n1 + n2;
+// }
 
-function substract(n1, n2) {
-  return n1 - n2;
-}
+// function substract(n1, n2) {
+//   return n1 - n2;
+// }
 
-let val1 = calculate(10, 20, add);
-console.log(val1);
+// let val1 = calculate(10, 20, add);
+// console.log(val1);
 
-let val2 = calculate(100, 50, substract);
-console.log(val2);
+// let val2 = calculate(100, 50, substract);
+// console.log(val2);
 
-//! HOF : returning a function
-function greet(message) {
-  return function (name) {
-    return `${message} ${name}`;
-  };
-}
+// //! HOF : returning a function
+// function greet(message) {
+//   return function (name) {
+//     return `${message} ${name}`;
+//   };
+// }
 
-let val3 = greet("Welcome");
-console.log(val3("John"));
+// let val3 = greet("Welcome");
+// console.log(val3("John"));
+
+//! 9) CALLBACK FUNCTION : function passes as an arguements to another function
+
+// function callback() {
+//   console.log("Welcome");
+// }
+
+// function greet(cb) {
+//   cb();
+// }
+// greet(callback);
+
+// //! EXAMPLE
+// let arr1 = [10, 20, 30];
+// arr1.forEach(function (ele, idx, arr) {
+//   console.log(ele, idx, arr);
+// });
+
+//! 10) ARROW FUNCTION : Intoduced in ES6, to declare function in shorter syntax
+
+// // WAY 1
+// let a1 = () => {
+//   console.log("Arrow func 1");
+// };
+// a1();
+
+// // WAY 2 : can replace () with _
+// let a2 = _ => {
+//   console.log("Arrow func 2");
+// };
+// a2();
+
+// // WAY 3 : if one parameter, () not required
+// let a3 = x => {
+//   console.log("Arrow Func 3", x);
+// };
+// a3(10);
+
+// // WAY 4 : if multiple parameter, () required
+// let a4 = (x,y) => {
+//   console.log("Arrow Func 4", x,y);
+// };
+// a4(10,20);
+
+// // WAY 5 : if having single line of code, {} not required
+// let a5 = () => console.log("Arrow Func 5");
+// a5();
+
+// // WAY 6 : Explicit return, "return" keyword and {} is mandatory
+// let a6 = () => {
+//     return "Arrow Func 6"
+// }
+// console.log(a6());
+
+// // WAY 7 : Implicit return , "return" keyword and {} not required
+// let a7 = (n1,n2) =>  n1+n2;
+// console.log(a7(5,2));
+
+//! ARRAYS
+
+//! 1) array litrals
+let arr1 = [10, 20, 30, 40, 50];
+arr1[10] = true;
+console.log(arr1);
+
+//! 2) array constructor
+let arr2 = new Array(10, 20, 30, 40, 50);
+console.log(arr2);
+
+let arr3 = new Array(10);
+arr3[11] = "Hello";
+console.log(arr3);
