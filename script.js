@@ -565,3 +565,69 @@ There are 2 types of datatype
 // console.log("Revesed Arr", revArr); // [5, 4, 3, 2, 1]
 // console.log(arr5); // [5, 4, 3, 2, 1]
 
+//! ADVANCE ARRAY METHODS
+
+// //! array.forEach() : do not return anything , Undefined
+// let arr1 = [10, 20, 30, 40, 50];
+
+// let val1 = arr1.forEach((ele, idx, array) => {
+//   console.log(ele, idx, array);
+//   return ele + 5;
+// });
+// console.log(val1);
+
+// console.log("------------------------------");
+
+// //! array.map() :it returns a new array
+// let val2 = arr1.map((ele, idx, array) => {
+//   console.log(ele, idx, array);
+//   return ele + 5;
+// });
+// console.log(val2);
+
+// //! array.filter() : returns new array of filtered elements
+// let val3 = arr1.filter((ele) => ele >= 30);
+// console.log(val3);
+
+// //! array.find() : Returns the value of the first element in the array where predicate is true, and undefined otherwise.
+// let val4 = arr1.find((ele) => {
+//   return ele === 30;
+// });
+// console.log(val4); // 30
+
+// //! array.findIndex() : Returns the index of the first element in the array where predicate is true, and -1 otherwise.
+// let val5 = arr1.findIndex((ele) => {
+//   return ele === 30;
+// });
+// console.log(val5); // 2
+
+// //! array.reduce()
+// let arr2 = [10, 20, 30, 40];
+
+// let sum = 0;
+// for (let i = 0; i < arr2.length; i++) {
+//   sum = sum + arr2[i];
+// }
+// console.log("sum is", sum);
+
+// let val6 = arr2.reduce((acc, ele, idx, array) => {
+//   console.log(acc, ele);
+//   return acc + ele;
+// }, 25);
+// console.log("Sum is ---->", val6);
+
+//! REST AND SPREAD OPERATOR : used to pack and unpack array elements
+// let arr1 = [10, 20, 30, 40, 50];
+// console.log(...arr1); // spread
+
+// let arr2 = ["Hello", true, 100, null, ...arr1];
+// console.log(arr2); // rest
+
+//! ARRAY DESTRUCTRING
+let arr1 = [10, 20, 30, 40, 50, 60, 70];
+
+let [a, b, c, d, ...e] = arr1;
+
+console.log(a); // 10
+console.log(d); // 40
+console.log(e); // [50,60,70] <--- rest
