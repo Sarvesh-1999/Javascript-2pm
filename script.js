@@ -1,4 +1,4 @@
-console.log("External JS");
+// console.log("External JS");
 /*
 Token : smallest unit of every programming lang
 - token are of 4 types:
@@ -471,97 +471,97 @@ There are 2 types of datatype
 // arr2[15] = "Hello"
 // console.log(arr2);
 
-//! ARRAY METHODS
-let arr1 = [10, 20, 30, 40, 50];
-console.log(arr1);
-console.log("length is ", arr1.length);
+// //! ARRAY METHODS
+// let arr1 = [10, 20, 30, 40, 50];
+// console.log(arr1);
+// console.log("length is ", arr1.length);
 
-//! array.push() : Appends new elements to the end of an array, and returns the new length of the array
-let newLength = arr1.push(60, 70, 80);
-console.log(arr1); // [10,20,30,40,50,60,70,80]
-console.log("new length is ", newLength);
+// //! array.push() : Appends new elements to the end of an array, and returns the new length of the array
+// let newLength = arr1.push(60, 70, 80);
+// console.log(arr1); // [10,20,30,40,50,60,70,80]
+// console.log("new length is ", newLength);
 
-//! array.pop() : Removes last element from array and returns it
-let lastEl = arr1.pop();
-console.log(arr1); // [10,20,30,40,50,60,70]
-console.log("Last element was", lastEl);
+// //! array.pop() : Removes last element from array and returns it
+// let lastEl = arr1.pop();
+// console.log(arr1); // [10,20,30,40,50,60,70]
+// console.log("Last element was", lastEl);
 
-//! array.unshift() : Appends new elements to the first of an array, and returns the new length of the array
-let newLength1 = arr1.unshift(100, 200, 300);
-console.log(arr1); // [100,200,300,10,20,30,40,50,60,70]
-console.log("new length is", newLength1);
+// //! array.unshift() : Appends new elements to the first of an array, and returns the new length of the array
+// let newLength1 = arr1.unshift(100, 200, 300);
+// console.log(arr1); // [100,200,300,10,20,30,40,50,60,70]
+// console.log("new length is", newLength1);
 
-// //! NON-PRIMITIVE (MUTABLE) VS PRIMITIVE (IMMUTABLE)
-// let str1 = "Hello";
-// console.log(str1); // Hello
-// str1[0] = "X";
-// console.log(str1); // Hello -> immutable
+// // //! NON-PRIMITIVE (MUTABLE) VS PRIMITIVE (IMMUTABLE)
+// // let str1 = "Hello";
+// // console.log(str1); // Hello
+// // str1[0] = "X";
+// // console.log(str1); // Hello -> immutable
 
-// let arr = [1, 2, 3, 4, 5];
-// console.log(arr); // [1,2,3,4,5]
-// arr[0] = "Hiii";
-// console.log(arr); // ["Hiii",2,3,4,5] -> mutable
+// // let arr = [1, 2, 3, 4, 5];
+// // console.log(arr); // [1,2,3,4,5]
+// // arr[0] = "Hiii";
+// // console.log(arr); // ["Hiii",2,3,4,5] -> mutable
 
-//! array.shift() :  Removes first element from array and returns it
-let firstEl = arr1.shift();
-console.log(arr1); //  [200,300,10,20,30,40,50,60,70]
-console.log("First Element was", firstEl);
+// //! array.shift() :  Removes first element from array and returns it
+// let firstEl = arr1.shift();
+// console.log(arr1); //  [200,300,10,20,30,40,50,60,70]
+// console.log("First Element was", firstEl);
 
-//! array.splice( startIndex , deleteCount , newElements )
+// //! array.splice( startIndex , deleteCount , newElements )
 
-let arr2 = [100, 200, 300, 400, 500];
+// let arr2 = [100, 200, 300, 400, 500];
 
-// only remove
-let deletedEle1 = arr2.splice(2, 1);
-console.log(arr2); // [100, 200, 400, 500]
-console.log(deletedEle1); // [300]
+// // only remove
+// let deletedEle1 = arr2.splice(2, 1);
+// console.log(arr2); // [100, 200, 400, 500]
+// console.log(deletedEle1); // [300]
 
-// only add
-let deletedEle2 = arr2.splice(3, 0, "Hii");
-console.log(arr2); //  [100, 200, 400, 'Hii', 500]
-console.log(deletedEle2); // []
+// // only add
+// let deletedEle2 = arr2.splice(3, 0, "Hii");
+// console.log(arr2); //  [100, 200, 400, 'Hii', 500]
+// console.log(deletedEle2); // []
 
-// add and remove
-let deletedEle3 = arr2.splice(1, 2, true);
-console.log(arr2); //  [100, true, 'Hii', 500]
-console.log(deletedEle3); // [200,400]
+// // add and remove
+// let deletedEle3 = arr2.splice(1, 2, true);
+// console.log(arr2); //  [100, true, 'Hii', 500]
+// console.log(deletedEle3); // [200,400]
 
-//! array.slice( startIndex , endIndex )
-// NOTE : endIndex always gets ignored
+// //! array.slice( startIndex , endIndex )
+// // NOTE : endIndex always gets ignored
 
-let arr3 = [100, 200, 300, 400, 500];
+// let arr3 = [100, 200, 300, 400, 500];
 
-let slicedArr1 = arr3.slice(1, 4);
-console.log("Sliced Array 1 is", slicedArr1); // [200, 300, 400]
+// let slicedArr1 = arr3.slice(1, 4);
+// console.log("Sliced Array 1 is", slicedArr1); // [200, 300, 400]
 
-let slicedArr2 = arr3.slice(3);
-console.log("Sliced Array 2 is", slicedArr2); // [400, 500]
+// let slicedArr2 = arr3.slice(3);
+// console.log("Sliced Array 2 is", slicedArr2); // [400, 500]
 
-console.log("Original Array is", arr3);
+// console.log("Original Array is", arr3);
 
-//! array.sort()
-let arr4 = [10, 2, 60, 3, 78, 9];
+// //! array.sort()
+// let arr4 = [10, 2, 60, 3, 78, 9];
 
-// lexographical sorting : number get converted into string
-let sortedArr1 = arr4.sort();
-console.log(sortedArr1); // [10, 2, 3, 60, 78, 9]
+// // lexographical sorting : number get converted into string
+// let sortedArr1 = arr4.sort();
+// console.log(sortedArr1); // [10, 2, 3, 60, 78, 9]
 
-let sortedArr2 = arr4.sort((a, b) => a - b);
-/*
-if number > 0 ===> swap
-if number < 0 ===> no swap
-if number = 0 ===> no swap
-*/
-console.log(sortedArr2); // [2, 3, 9, 10, 60, 78]
+// let sortedArr2 = arr4.sort((a, b) => a - b);
+// /*
+// if number > 0 ===> swap
+// if number < 0 ===> no swap
+// if number = 0 ===> no swap
+// */
+// console.log(sortedArr2); // [2, 3, 9, 10, 60, 78]
 
-let sortedArr3 = arr4.sort((a, b) => b - a);
-console.log(sortedArr3); // [78, 60, 10, 9, 3, 2]
+// let sortedArr3 = arr4.sort((a, b) => b - a);
+// console.log(sortedArr3); // [78, 60, 10, 9, 3, 2]
 
-//! array.reverse()
-let arr5 = [1, 2, 3, 4, 5];
-console.log(arr5); // [1,2,3,4,5]
+// //! array.reverse()
+// let arr5 = [1, 2, 3, 4, 5];
+// console.log(arr5); // [1,2,3,4,5]
 
-let revArr = arr5.reverse();
-console.log("Revesed Arr", revArr); // [5, 4, 3, 2, 1]
-console.log(arr5); // [5, 4, 3, 2, 1]
+// let revArr = arr5.reverse();
+// console.log("Revesed Arr", revArr); // [5, 4, 3, 2, 1]
+// console.log(arr5); // [5, 4, 3, 2, 1]
 
