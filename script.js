@@ -623,11 +623,106 @@ There are 2 types of datatype
 // let arr2 = ["Hello", true, 100, null, ...arr1];
 // console.log(arr2); // rest
 
-//! ARRAY DESTRUCTRING
-let arr1 = [10, 20, 30, 40, 50, 60, 70];
+// //! ARRAY DESTRUCTRING
+// let arr1 = [10, 20, 30, 40, 50, 60, 70];
+// let [a, b, c, d, ...e] = arr1;
 
-let [a, b, c, d, ...e] = arr1;
+// console.log(a); // 10
+// console.log(d); // 40
+// console.log(e); // [50,60,70] <--- rest
 
-console.log(a); // 10
-console.log(d); // 40
-console.log(e); // [50,60,70] <--- rest
+// //! skipping elements while destructuring
+// let arr2 = [100, 200, 300, 400, 500, 600];
+// let [n1, , n2, , , n3] = arr2;
+// console.log(n1, n2, n3);
+
+// //! nested array destructuring
+// let arr3 = [1000, 2000, [10, 20, 30, 40, [54, 80, 500], 50, 60]];
+// let [x1, , [, x2, , x3, [, x4], , x5]] = arr3;
+// console.log(x1, x2, x3, x4, x5); // 1000,20,40,80,60
+
+// //! EXAMPLE OF REACT
+// function useState(initialState) {
+//   return [initialState, () => {}];
+// }
+// let [state , setState] = useState()
+
+//! OBJECTS
+
+// //! object literal
+// let obj1 = {
+//   id: 1,
+//   name: "John Doe",
+//   isLoggedIn: true,
+//   salary: 50000,
+// };
+// obj1.company = "HCL";
+// console.log(obj1);
+
+// //! object constructor
+// let obj2 = new Object({ id: 2, name: "Jane Doe" });
+// obj2.company = "TCS";
+// console.log(obj2);
+
+//! CRUD
+// let student1 = {
+//   id: "123AX",
+//   fname: "Clark",
+//   lname: "Kent",
+//   age: 15,
+//   city: "Delhi",
+//   class: "8",
+// };
+// //! READ
+// // there are 2 ways
+
+// let x = "city";
+
+// // 1) using dot operator
+// console.log(student1.id);
+// console.log(student1.x);
+
+// // 2) using square brackets
+// console.log(student1["fname"]);
+// console.log(student1[x]);
+
+// let arr = [10, 20, 30];
+// //! for of loop
+// for (let i of arr) {
+//   console.log(i);
+// }
+
+// //! for in loop
+// for (let i in arr) {
+//   console.log(i);
+// }
+
+// //! ONLY WAY TO ITERATE AN OBJECT
+// for (let i in student1) {
+//   console.log(student1[i]);
+// }
+
+//! UPDATE
+
+// add new key
+// student1.course = "Mern Stack"
+
+// // update existing key
+// student1.age = 20
+
+// //! DELETE
+// delete student1.class
+
+// console.log(student1);
+
+//! HOW TO CREATE YOUR OWN METHODS
+
+let emp1 = {
+  id: 1,
+  fname: "John",
+  lname: "Doe",
+  getFullName: function () {
+    console.log(this.fname, this.lname);
+  },
+};
+emp1.getFullName();
