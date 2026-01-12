@@ -717,12 +717,81 @@ There are 2 types of datatype
 
 //! HOW TO CREATE YOUR OWN METHODS
 
-let emp1 = {
+// let emp1 = {
+//   id: 1,
+//   fname: "John",
+//   lname: "Doe",
+//   getFullName: function () {
+//     console.log(this.fname, this.lname);
+//   },
+// };
+// emp1.getFullName();
+
+//! "this" keyword
+// console.log(window);
+// console.log(this);
+
+// let arr1 = [this];
+// console.log(arr1[0]);
+
+// function demo(){
+//   console.log(this);
+// }
+// demo()
+
+// let obj1 = {
+//   x: this,
+// };
+
+// console.log(obj1.x);
+
+function getEmail() {
+  console.log(`${this.fname}.${this.lname}@gmail.com`);
+}
+
+function greet(city, state) {
+  console.log(`${this.fname} is from ${city}, ${state}`);
+}
+
+const emp1 = {
   id: 1,
-  fname: "John",
+  fname: "Jane",
   lname: "Doe",
-  getFullName: function () {
-    console.log(this.fname, this.lname);
-  },
+  company: "TCS",
 };
-emp1.getFullName();
+
+const emp2 = {
+  id: 2,
+  fname: "Clark",
+  lname: "Kent",
+  company: "HCL",
+};
+
+const emp3 = {
+  id: 3,
+  fname: "Bruce",
+  lname: "Wayne",
+  company: "Wipro",
+};
+
+//! call(), apply() and bind()
+console.log(emp1);
+
+// ! call() : calls a function immediately with a specified "this" and accepts multiple arguements
+
+getEmail.call(emp1);
+greet.call(emp1, "Noida", "UP");
+
+//! apply() : calls a function immediately with a specified "this" and accepts 2 arguements , 1st is object reference and 2nd is []
+
+getEmail.apply(emp2);
+greet.apply(emp2, ["Noida", "UP"]);
+
+
+//! bind() : it do not call function immediately, returns a bounded function that can be called later on
+
+let boundedGetEmail = getEmail.bind(emp3)
+boundedGetEmail()
+
+let boundedGreet = greet.bind(emp3)
+boundedGreet("Noida" , "Up")
