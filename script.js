@@ -745,53 +745,93 @@ There are 2 types of datatype
 
 // console.log(obj1.x);
 
-function getEmail() {
-  console.log(`${this.fname}.${this.lname}@gmail.com`);
-}
+// function getEmail() {
+//   console.log(`${this.fname}.${this.lname}@gmail.com`);
+// }
 
-function greet(city, state) {
-  console.log(`${this.fname} is from ${city}, ${state}`);
-}
+// function greet(city, state) {
+//   console.log(`${this.fname} is from ${city}, ${state}`);
+// }
 
-const emp1 = {
+// const emp1 = {
+//   id: 1,
+//   fname: "Jane",
+//   lname: "Doe",
+//   company: "TCS",
+// };
+
+// const emp2 = {
+//   id: 2,
+//   fname: "Clark",
+//   lname: "Kent",
+//   company: "HCL",
+// };
+
+// const emp3 = {
+//   id: 3,
+//   fname: "Bruce",
+//   lname: "Wayne",
+//   company: "Wipro",
+// };
+
+// //! call(), apply() and bind()
+// console.log(emp1);
+
+// // ! call() : calls a function immediately with a specified "this" and accepts multiple arguements
+
+// getEmail.call(emp1);
+// greet.call(emp1, "Noida", "UP");
+
+// //! apply() : calls a function immediately with a specified "this" and accepts 2 arguements , 1st is object reference and 2nd is []
+
+// getEmail.apply(emp2);
+// greet.apply(emp2, ["Noida", "UP"]);
+
+// //! bind() : it do not call function immediately, returns a bounded function that can be called later on
+
+// let boundedGetEmail = getEmail.bind(emp3)
+// boundedGetEmail()
+
+// let boundedGreet = greet.bind(emp3)
+// boundedGreet("Noida" , "Up")
+
+// //! OBJECT METHODS
+
+// let obj = { id: 1, ename: "John" };
+
+// //! Object.keys()
+// let keys = Object.keys(obj);
+// console.log(keys); // ["id" , "ename"]
+
+// //! Object.values()
+// let values = Object.values(obj);
+// console.log(values); // [ 1 , "John" ]
+
+// //! Object.entries()
+// let keyAndValue = Object.entries(obj);
+// console.log(keyAndValue); //  [  ["id",1]  , ["ename","John"]  ]
+
+// //! Object.fromEntries()
+// let obj2 = Object.fromEntries(keyAndValue)
+// console.log(obj2); // { id: 1, ename: "John" }
+
+// ! OBJECT DESTRUCTURING
+let employee1 = {
   id: 1,
-  fname: "Jane",
+  fname: "John",
   lname: "Doe",
-  company: "TCS",
+  address: {
+    pincode: 890761,
+    city: "Noida",
+    state: "UP",
+  },
+  hobbies: ["Coding", "Gaming", "Travelling"],
+  // company: "HCL",
+  sal: 60000,
 };
 
-const emp2 = {
-  id: 2,
-  fname: "Clark",
-  lname: "Kent",
-  company: "HCL",
-};
+// let { fname: firstName, company = "NA", sal: salary = 0 } = employee1;
+// console.log(firstName, company, salary);
 
-const emp3 = {
-  id: 3,
-  fname: "Bruce",
-  lname: "Wayne",
-  company: "Wipro",
-};
-
-//! call(), apply() and bind()
-console.log(emp1);
-
-// ! call() : calls a function immediately with a specified "this" and accepts multiple arguements
-
-getEmail.call(emp1);
-greet.call(emp1, "Noida", "UP");
-
-//! apply() : calls a function immediately with a specified "this" and accepts 2 arguements , 1st is object reference and 2nd is []
-
-getEmail.apply(emp2);
-greet.apply(emp2, ["Noida", "UP"]);
-
-
-//! bind() : it do not call function immediately, returns a bounded function that can be called later on
-
-let boundedGetEmail = getEmail.bind(emp3)
-boundedGetEmail()
-
-let boundedGreet = greet.bind(emp3)
-boundedGreet("Noida" , "Up")
+let { address:{city } , hobbies:[ , , h1]} = employee1;
+console.log(city , h1);
