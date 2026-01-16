@@ -816,22 +816,93 @@ There are 2 types of datatype
 // console.log(obj2); // { id: 1, ename: "John" }
 
 // ! OBJECT DESTRUCTURING
-let employee1 = {
+// let employee1 = {
+//   id: 1,
+//   fname: "John",
+//   lname: "Doe",
+//   address: {
+//     pincode: 890761,
+//     city: "Noida",
+//     state: "UP",
+//   },
+//   hobbies: ["Coding", "Gaming", "Travelling"],
+//   // company: "HCL",
+//   sal: 60000,
+// };
+
+// // let { fname: firstName, company = "NA", sal: salary = 0 } = employee1;
+// // console.log(firstName, company, salary);
+
+// let { address:{city } , hobbies:[ , , h1]} = employee1;
+// console.log(city , h1);
+
+//! JSON , LOCAL STORAGE AND SESSION STORAGE
+let user1 = {
   id: 1,
   fname: "John",
   lname: "Doe",
-  address: {
-    pincode: 890761,
-    city: "Noida",
-    state: "UP",
-  },
-  hobbies: ["Coding", "Gaming", "Travelling"],
-  // company: "HCL",
-  sal: 60000,
+  sal: 50000,
+  company: "Qspider",
 };
 
-// let { fname: firstName, company = "NA", sal: salary = 0 } = employee1;
-// console.log(firstName, company, salary);
+//! ---> store data in localStorage OR sessionStorage
+// let jsonObject = JSON.stringify(user1); // converts JS to JSON
+// localStorage.setItem("users", jsonObject);
 
-let { address:{city } , hobbies:[ , , h1]} = employee1;
-console.log(city , h1);
+//! ---> get data from localStorage OR sessionStorage
+// let storageData = localStorage.getItem("users");
+// let jsObject = JSON.parse(storageData); // converts JSON to JS
+// console.log(jsObject);
+
+//! ---> remove single key from localStorage OR sessionStorage
+// localStorage.removeItem("demo2")
+
+//! ---> remove all keys from localStorage OR sessionStorage
+// localStorage.clear()
+
+// let p1 = fetch("https://jsonplaceholder.typicode.com/users");
+// console.log(p1);
+
+// p1.then((response) => {
+//   console.log("Promise Fullfilled 🚀");
+
+//   let p2 = response.json();
+//   console.log(p2);
+
+//   p2.then((data) => {
+//     console.log(data);
+//   });
+
+//   p2.catch(() => {
+//     console.log("Something went wrong ❌");
+//   });
+// });
+
+// p1.catch(() => {
+//   console.log("Promise Rejected ❌");
+// });
+
+// let promise1 = fetch("https://jsonplaceholder.typicode.com/todos");
+// console.log(promise1);
+
+// promise1.then((response) => {
+//   let promise2 = response.json();
+//   console.log(promise2);
+
+//   promise2.then((data) => {
+//     console.log(data);
+//   });
+
+//   promise2.catch((err) => {
+//     console.log(err);
+//   });
+// });
+
+// promise1.catch((err) => {
+//   console.log(err);
+// });
+
+
+// promise1.finally(()=>{
+//   console.log("API CALL DONE ⭐", );
+// })
