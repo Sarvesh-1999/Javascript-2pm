@@ -902,7 +902,75 @@ let user1 = {
 //   console.log(err);
 // });
 
-
 // promise1.finally(()=>{
 //   console.log("API CALL DONE ⭐", );
 // })
+
+//! ASYNC AND AWAIT
+// async function getTodos() {
+//   try {
+//     let response = await fetch("https://jsonplaceholder.typicode.com/todos");
+//     let data = await response.json();
+//     displayTodos(data);
+//   } catch (err) {
+//     console.log("API Call Failed..", err);
+//   }
+// }
+// getTodos();
+
+// function displayTodos(allTodos) {
+//   console.log(allTodos);
+
+//   allTodos.forEach((todo) => {
+//     let { id, userId, title, completed } = todo;
+
+//     document.writeln(`
+//       <div>
+//         <h3>TODO : ${title}</h3>
+//          ${
+//            completed
+//              ? `<span style='background-color:green'>Completed</span>`
+//              : `<span style='background-color:red'>Pending</span>`
+//           }
+//       </div>
+
+//       `);
+//   });
+// }
+
+//! setInterval and setTimeout
+
+// console.log("5 sec Timer started");
+
+// setTimeout(() => {
+//   console.log("5 sec Completed");
+// }, 5000);
+
+// let intervalID = setInterval(() => {
+//   console.log("hiii");
+// }, 2000);
+
+// setTimeout(() => {
+//   clearInterval(intervalID);
+//   console.log("Interval Stopped");
+// }, 10000);
+
+
+//! EVENT LOOP EXAMPLE CODE : https://www.jsv9000.app/
+console.log("Start");
+
+setTimeout(function timeout1() {
+  console.log("Timeout 1");
+}, 4000);
+
+console.log("Hello World");
+
+Promise.resolve("Success").then(function promiseFunc(res) {
+  console.log(res);
+});
+
+setTimeout(function timeout2() {
+  console.log("Timeout 2");
+}, 0);
+
+console.log("End");
