@@ -955,22 +955,106 @@ let user1 = {
 //   console.log("Interval Stopped");
 // }, 10000);
 
-
 //! EVENT LOOP EXAMPLE CODE : https://www.jsv9000.app/
-console.log("Start");
+// console.log("Start");
 
-setTimeout(function timeout1() {
-  console.log("Timeout 1");
-}, 4000);
+// setTimeout(function timeout1() {
+//   console.log("Timeout 1");
+// }, 4000);
 
-console.log("Hello World");
+// console.log("Hello World");
 
-Promise.resolve("Success").then(function promiseFunc(res) {
-  console.log(res);
-});
+// Promise.resolve("Success").then(function promiseFunc(res) {
+//   console.log(res);
+// });
 
-setTimeout(function timeout2() {
-  console.log("Timeout 2");
-}, 0);
+// setTimeout(function timeout2() {
+//   console.log("Timeout 2");
+// }, 0);
 
-console.log("End");
+// console.log("End");
+
+// ! DOM - DOCUMENT OBJECT MODEL
+
+//! DOM SELECTORS: to target html elements and apply functionality to it. there are 5 types of DOM Selectors
+
+// //! 1) document.getElementById()
+// const h2Tag = document.getElementById("subheading");
+// console.log(h2Tag); // <h2></h2>
+// console.log(h2Tag.textContent); // text of h2 tag
+// h2Tag.style.backgroundColor = "red";
+
+// //! 2) document.getElementsByClassName()
+// const elements = document.getElementsByClassName("content");
+// console.log(elements); // HTMLCollection(3) [h3.content, div.content, h6.content]
+// console.log(elements[0].textContent);
+
+// let arr = [10, 20, 30];
+// console.log(arr);
+
+// // Array.isArray() is used to check weather array is pure or not, returns boolean
+// console.log(Array.isArray(elements)); // false
+// console.log(Array.isArray(arr)); // true
+
+// // NOTE : HTMLCollection is a Array-Like Object. its not a pure array because it does not have array prototype object
+
+// //! 3) document.getElementsByTagName()
+// let sections = document.getElementsByTagName("section");
+// console.log(sections); // HTMLCollection(3) [section, section, section]
+// console.log(sections[2]);
+
+// //! 4) document.querySelector("id , class ,tagname")
+
+// const ele1 = document.querySelector("#subheading")
+// console.log(ele1);
+
+// const ele2 = document.querySelector(".content")
+// console.log(ele2);
+
+// const ele3 = document.querySelector("section")
+// console.log(ele3);
+
+// const ele4 = document.querySelector("section , #subheading , .content")
+// console.log(ele4);
+
+// //! 5) document.querySelectorAll(" #id, .class ,tagname ")
+
+// const lists1 = document.querySelectorAll("section")
+// console.log(lists1); // NodeList(3) [section, section, section]
+
+// const lists2 = document.querySelectorAll(".content")
+// console.log(lists2); // NodeList(3) [h3.content, div.content, h6.content]
+
+// const lists3 = document.querySelectorAll("#subheading")
+// console.log(lists3); // NodeList [h2#subheading]
+
+// const lists4 = document.querySelectorAll("section , .content, #subheading")
+// console.log(lists4); // NodeList(7) [h2#subheading, h3.content, div.content, h6.content, section, section, section]
+
+//! HTMLCollection VS NodeList
+const collection = document.getElementsByTagName("section");
+const lists = document.querySelectorAll("section");
+
+// --> SIMILARITY : both are impure array
+console.log(Array.isArray(collection)); // false
+console.log(Array.isArray(lists)); // false
+
+// --> DIFFRENCE :
+// 1) We cannot use any of the array methods in HTMLCollection, but we can use forEach() method in NodeList
+console.log(collection);
+
+console.log(lists);
+lists.forEach((el) => console.log(el));
+
+// 2) HTMLCollection are known as Live Collection whereas NodeList is known as Static Collection
+
+console.log("HTMLCollection ---> ", collection.length); // 3
+console.log("NodeList ---> ", lists.length); // 3
+
+const sectionTag = document.createElement("section");
+sectionTag.textContent = "Hello World";
+console.log(sectionTag);
+document.body.appendChild(sectionTag);
+
+console.log("HTMLCollection ---> ", collection.length); // 4 Live Collection
+console.log("NodeList ---> ", lists.length); // 3 Static Collection
