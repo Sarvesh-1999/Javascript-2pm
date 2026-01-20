@@ -1032,29 +1032,104 @@ let user1 = {
 // console.log(lists4); // NodeList(7) [h2#subheading, h3.content, div.content, h6.content, section, section, section]
 
 //! HTMLCollection VS NodeList
-const collection = document.getElementsByTagName("section");
-const lists = document.querySelectorAll("section");
+// const collection = document.getElementsByTagName("section");
+// const lists = document.querySelectorAll("section");
 
-// --> SIMILARITY : both are impure array
-console.log(Array.isArray(collection)); // false
-console.log(Array.isArray(lists)); // false
+// // --> SIMILARITY : both are impure array
+// console.log(Array.isArray(collection)); // false
+// console.log(Array.isArray(lists)); // false
 
-// --> DIFFRENCE :
-// 1) We cannot use any of the array methods in HTMLCollection, but we can use forEach() method in NodeList
-console.log(collection);
+// // --> DIFFRENCE :
+// // 1) We cannot use any of the array methods in HTMLCollection, but we can use forEach() method in NodeList
+// console.log(collection);
 
-console.log(lists);
-lists.forEach((el) => console.log(el));
+// console.log(lists);
+// lists.forEach((el) => console.log(el));
 
-// 2) HTMLCollection are known as Live Collection whereas NodeList is known as Static Collection
+// // 2) HTMLCollection are known as Live Collection whereas NodeList is known as Static Collection
 
-console.log("HTMLCollection ---> ", collection.length); // 3
-console.log("NodeList ---> ", lists.length); // 3
+// console.log("HTMLCollection ---> ", collection.length); // 3
+// console.log("NodeList ---> ", lists.length); // 3
 
-const sectionTag = document.createElement("section");
-sectionTag.textContent = "Hello World";
-console.log(sectionTag);
-document.body.appendChild(sectionTag);
+// const sectionTag = document.createElement("section");
+// sectionTag.textContent = "Hello World";
+// console.log(sectionTag);
+// document.body.appendChild(sectionTag);
 
-console.log("HTMLCollection ---> ", collection.length); // 4 Live Collection
-console.log("NodeList ---> ", lists.length); // 3 Static Collection
+// console.log("HTMLCollection ---> ", collection.length); // 4 Live Collection
+// console.log("NodeList ---> ", lists.length); // 3 Static Collection
+
+//! EVENTS : actions performed by the user
+
+//! MOUSE EVENTS
+function singleClick() {
+  console.log("single clicked");
+}
+
+function doubleClick() {
+  console.log("double clicked");
+}
+
+function cursorEnter() {
+  console.log("cursor entered");
+}
+
+function cursorExit() {
+  console.log("cursor exit");
+}
+
+function cursorMove() {
+  console.log("cursor moved");
+}
+
+//! KEYBOARD EVENTS
+
+function keyPress() {
+  console.log("key is pressed");
+}
+
+function keyRelease() {
+  console.log("Key is released");
+}
+
+function focusChange() {
+  console.log("input changed");
+}
+
+//! FORM EVENT
+
+function formHandle(e) {
+  e.preventDefault(); // stops page-reload
+  console.log("Form Submitted");
+
+  let user = {
+    email: e.target[0].value,
+    password: e.target[1].value,
+  };
+
+  console.log(user);
+  alert(`Welcome ${user.email}`);
+}
+
+//! DOM MANIPULATION
+
+// How to create an HTML element :- document.createElement()
+
+const pTag = document.createElement("p");
+const divTag = document.createElement("div");
+const imgTag = document.createElement("img");
+
+//! How to add text
+pTag.textContent = "hello i am Paragraph";
+divTag.innerHTML = "<em>Hello i am div</em>"; // <--- it will create em tag
+
+//! How to add attributes : there are 2 ways
+// 1) using property
+imgTag.src ="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80";
+imgTag.height = 200;
+
+// 2) using method
+imgTag.setAttribute("alt", "bird");
+
+// document.body.appendChild(imgTag ) //<-- it can append only 1 node as a child
+document.body.append(imgTag, divTag, pTag); //<-- can append multiple node as a child 

@@ -8,7 +8,7 @@
   <body>
     <h1>Learn Javascript</h1>
 
-    <h2 id="subheading">Target me using ID 1</h2>
+    <!-- <h2 id="subheading">Target me using ID 1</h2>
 
     <h3 class="content">Target me using ClassName</h3>
     <div class="content">Target me using ClassName</div>
@@ -16,7 +16,50 @@
 
     <section>Target me using TagName</section>
     <section>Target me using TagName</section>
-    <section>Target me using TagName</section>
+    <section>Target me using TagName</section> -->
+
+
+    <button onclick="singleClick()">
+      click
+    </button>
+
+    <button ondblclick="doubleClick()">
+      double click
+    </button>
+
+    <button onmouseenter="cursorEnter()">
+      enter
+    </button>
+
+    <button onmouseleave="cursorExit()">
+      exit
+    </button>
+
+    <button onmousemove="cursorMove()">
+      move
+    </button>
+
+    <input type="text" onkeydown="keyPress()">
+
+    <input type="text" onkeyup="keyRelease()">
+
+    <input type="text" onchange="focusChange()">
+
+
+    <fieldset>
+      <legend>Fill this form</legend>
+      <form onsubmit="formHandle(event)">
+        <input type="text">
+        <br>
+        <input type="text">
+        <br>
+        <button>
+          Submit
+        </button>
+      </form>
+    </fieldset>
+
+
 
     <script src="script.js"></script>
   </body>
