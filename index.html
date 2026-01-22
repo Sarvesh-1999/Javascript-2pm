@@ -18,48 +18,38 @@
     <section>Target me using TagName</section>
     <section>Target me using TagName</section> -->
 
+    <button onclick="singleClick()">click</button>
 
-    <button onclick="singleClick()">
-      click
-    </button>
+    <button ondblclick="doubleClick()">double click</button>
 
-    <button ondblclick="doubleClick()">
-      double click
-    </button>
+    <button onmouseenter="cursorEnter()">enter</button>
 
-    <button onmouseenter="cursorEnter()">
-      enter
-    </button>
+    <button onmouseleave="cursorExit()">exit</button>
 
-    <button onmouseleave="cursorExit()">
-      exit
-    </button>
+    <button onmousemove="cursorMove()">move</button>
 
-    <button onmousemove="cursorMove()">
-      move
-    </button>
+    <input type="text" onkeydown="keyPress()" />
 
-    <input type="text" onkeydown="keyPress()">
+    <input type="text" onkeyup="keyRelease()" />
 
-    <input type="text" onkeyup="keyRelease()">
-
-    <input type="text" onchange="focusChange()">
-
+    <input type="text" onchange="focusChange()" />
 
     <fieldset>
       <legend>Fill this form</legend>
       <form onsubmit="formHandle(event)">
-        <input type="text">
-        <br>
-        <input type="text">
-        <br>
-        <button>
-          Submit
-        </button>
+        <input type="text" />
+        <br />
+        <input type="text" />
+        <br />
+        <button>Submit</button>
       </form>
     </fieldset>
 
+    <hr>
 
+    <button id="signup-btn">
+      Sign up
+    </button>
 
     <script src="script.js"></script>
   </body>

@@ -1101,6 +1101,7 @@ function focusChange() {
 function formHandle(e) {
   e.preventDefault(); // stops page-reload
   console.log("Form Submitted");
+  console.log(e);
 
   let user = {
     email: e.target[0].value,
@@ -1115,7 +1116,7 @@ function formHandle(e) {
 
 // How to create an HTML element :- document.createElement()
 
-const pTag = document.createElement("p");
+const pTag = document.createElement("p"); // <p></p>
 const divTag = document.createElement("div");
 const imgTag = document.createElement("img");
 
@@ -1125,11 +1126,32 @@ divTag.innerHTML = "<em>Hello i am div</em>"; // <--- it will create em tag
 
 //! How to add attributes : there are 2 ways
 // 1) using property
-imgTag.src ="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80";
+imgTag.src =
+  "https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80";
 imgTag.height = 200;
 
 // 2) using method
 imgTag.setAttribute("alt", "bird");
 
 // document.body.appendChild(imgTag ) //<-- it can append only 1 node as a child
-document.body.append(imgTag, divTag, pTag); //<-- can append multiple node as a child 
+document.body.append(imgTag, divTag, pTag); //<-- can append multiple node as a child
+
+//! element.addEventListener( "event" , callback , useCapture )
+
+const btnTag = document.createElement("button");
+
+btnTag.textContent = "Login";
+
+btnTag.addEventListener("dblclick", () => {
+  alert("Logged in Successfully");
+});
+
+document.body.append(btnTag);
+
+
+
+const signupBtn = document.getElementById("signup-btn");
+
+signupBtn.addEventListener("click", () => {
+  console.log("Signup success");
+});
