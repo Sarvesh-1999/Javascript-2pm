@@ -35,16 +35,16 @@ signupFormEL.addEventListener("submit", (e) => {
   passwordEl.value = "";
   emailEl.value = "";
 
-  displaySignupUsers();
+  displaySignupUsers(); //! function will be called after submitting form
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  displaySignupUsers();
+  displaySignupUsers(); //! function will be called at initial render
 });
 
+//! TO DISPLAY ALL USERS ON UI
 function displaySignupUsers() {
   let allUsers = JSON.parse(localStorage.getItem("users")) || [];
-
   if (allUsers.length === 0) {
     const pTag = document.createElement("p");
     pTag.textContent = "No Users Available";
