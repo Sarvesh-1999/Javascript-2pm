@@ -1,4 +1,5 @@
 const signupFormEL = document.getElementById("signup-form");
+const usersContainer = document.getElementById("users-container");
 
 signupFormEL.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -44,19 +45,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
 //! TO DISPLAY ALL USERS ON UI
 function displaySignupUsers() {
+  usersContainer.textContent = "";
+
   let allUsers = JSON.parse(localStorage.getItem("users")) || [];
   if (allUsers.length === 0) {
     const pTag = document.createElement("p");
     pTag.textContent = "No Users Available";
-    document.body.append(pTag);
+    usersContainer.append(pTag);
   } else {
     allUsers.map((ele) => {
       const divTag = document.createElement("div");
       divTag.innerHTML = `
-        <h2>Username : ${ele.username}</h2>
-        <h2>Email : ${ele.email}</h2>
+        <p>Username : ${ele.username}</p>
+        <p>Email : ${ele.email}</p>
         `;
-      document.body.append(divTag);
+      usersContainer.append(divTag);
     });
   }
 }

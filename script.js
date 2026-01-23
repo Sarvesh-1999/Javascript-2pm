@@ -1061,97 +1061,139 @@ let user1 = {
 
 //! EVENTS : actions performed by the user
 
-//! MOUSE EVENTS
-function singleClick() {
-  console.log("single clicked");
-}
+// //! MOUSE EVENTS
+// function singleClick() {
+//   console.log("single clicked");
+// }
 
-function doubleClick() {
-  console.log("double clicked");
-}
+// function doubleClick() {
+//   console.log("double clicked");
+// }
 
-function cursorEnter() {
-  console.log("cursor entered");
-}
+// function cursorEnter() {
+//   console.log("cursor entered");
+// }
 
-function cursorExit() {
-  console.log("cursor exit");
-}
+// function cursorExit() {
+//   console.log("cursor exit");
+// }
 
-function cursorMove() {
-  console.log("cursor moved");
-}
+// function cursorMove() {
+//   console.log("cursor moved");
+// }
 
-//! KEYBOARD EVENTS
+// //! KEYBOARD EVENTS
 
-function keyPress() {
-  console.log("key is pressed");
-}
+// function keyPress() {
+//   console.log("key is pressed");
+// }
 
-function keyRelease() {
-  console.log("Key is released");
-}
+// function keyRelease() {
+//   console.log("Key is released");
+// }
 
-function focusChange() {
-  console.log("input changed");
-}
+// function focusChange() {
+//   console.log("input changed");
+// }
 
-//! FORM EVENT
+// //! FORM EVENT
 
-function formHandle(e) {
-  e.preventDefault(); // stops page-reload
-  console.log("Form Submitted");
-  console.log(e);
+// function formHandle(e) {
+//   e.preventDefault(); // stops page-reload
+//   console.log("Form Submitted");
+//   console.log(e);
 
-  let user = {
-    email: e.target[0].value,
-    password: e.target[1].value,
-  };
+//   let user = {
+//     email: e.target[0].value,
+//     password: e.target[1].value,
+//   };
 
-  console.log(user);
-  alert(`Welcome ${user.email}`);
-}
+//   console.log(user);
+//   alert(`Welcome ${user.email}`);
+// }
 
-//! DOM MANIPULATION
+// //! DOM MANIPULATION
 
-// How to create an HTML element :- document.createElement()
+// // How to create an HTML element :- document.createElement()
 
-const pTag = document.createElement("p"); // <p></p>
-const divTag = document.createElement("div");
-const imgTag = document.createElement("img");
+// const pTag = document.createElement("p"); // <p></p>
+// const divTag = document.createElement("div");
+// const imgTag = document.createElement("img");
 
-//! How to add text
-pTag.textContent = "hello i am Paragraph";
-divTag.innerHTML = "<em>Hello i am div</em>"; // <--- it will create em tag
+// //! How to add text
+// pTag.textContent = "hello i am Paragraph";
+// divTag.innerHTML = "<em>Hello i am div</em>"; // <--- it will create em tag
 
-//! How to add attributes : there are 2 ways
-// 1) using property
-imgTag.src =
-  "https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80";
-imgTag.height = 200;
+// //! How to add attributes : there are 2 ways
+// // 1) using property
+// imgTag.src =
+//   "https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80";
+// imgTag.height = 200;
 
-// 2) using method
-imgTag.setAttribute("alt", "bird");
+// // 2) using method
+// imgTag.setAttribute("alt", "bird");
 
-// document.body.appendChild(imgTag ) //<-- it can append only 1 node as a child
-document.body.append(imgTag, divTag, pTag); //<-- can append multiple node as a child
+// // document.body.appendChild(imgTag ) //<-- it can append only 1 node as a child
+// document.body.append(imgTag, divTag, pTag); //<-- can append multiple node as a child
 
-//! element.addEventListener( "event" , callback , useCapture )
+// //! element.addEventListener( "event" , callback , useCapture )
 
-const btnTag = document.createElement("button");
+// const btnTag = document.createElement("button");
 
-btnTag.textContent = "Login";
+// btnTag.textContent = "Login";
 
-btnTag.addEventListener("dblclick", () => {
-  alert("Logged in Successfully");
-});
+// btnTag.addEventListener("dblclick", () => {
+//   alert("Logged in Successfully");
+// });
 
-document.body.append(btnTag);
+// document.body.append(btnTag);
 
 
 
-const signupBtn = document.getElementById("signup-btn");
+// const signupBtn = document.getElementById("signup-btn");
 
-signupBtn.addEventListener("click", () => {
-  console.log("Signup success");
-});
+// signupBtn.addEventListener("click", () => {
+//   console.log("Signup success");
+// });
+
+//! EVENT PROPAGATION : the process how event travels in DOM tree. it travels in 2 phases 
+// 1)BUBBLING PHASE 0 (default) : event travels from target element to root element
+// 2)CAPTURING PHASE 1 : event travels from root element to target element
+
+const section = document.querySelector("section")
+const article = document.querySelector("article")
+const div = document.querySelector("div")
+
+section.addEventListener("click",(e)=>{
+  e.stopPropagation()
+  section.style.backgroundColor="yellow"
+  console.log("section");
+},0)
+
+article.addEventListener("click",(e)=>{
+  e.stopPropagation()
+  article.style.backgroundColor="red"
+  console.log("article");
+},0)
+
+//! stopPropagtion() : 
+// prevents further propagation of the current event in the capturing and bubbling phases.
+
+//! stopImmediatePropagation() : 
+// stops event to propagate either in bubbling or capturing phase and it also prevents several listeners that are attached to the same element for the same event type to get called
+
+div.addEventListener("click",(e)=>{
+  e.stopImmediatePropagation()
+  div.style.backgroundColor="orange"
+  console.log("div");
+},0)
+
+div.addEventListener("click",(e)=>{
+  console.log("click 2");
+},0)
+
+div.addEventListener("click",(e)=>{
+  console.log("click 3");
+},0)
+
+
