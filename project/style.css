@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.navbar {
+  height: 70px;
+  width: 100%;
+  background-color: royalblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+}
+.theme {
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px;
+}
+.products-container {
+  width: 100%;
+  padding: 50px;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 30px;
+}
+.wrapper > .card {
+  max-width: 300px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gainsboro;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.card > img {
+  height: 150px;
+  object-fit: contain;
+}
+.card > h2 {
+  margin-top: 20px;
+  font-size: 16px;
+}
+.card > p:first-of-type {
+  font-weight: 500;
+  margin: 10px 0;
+}
+.card > p:last-of-type {
+  font-weight: 500;
+  font-size: 14px;
+}
+.card > button {
+  margin-top: 10px;
+  background-color: royalblue;
+  color: white;
+  font-weight: 800;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.card > button:hover {
+  background-color: rgb(42, 73, 163);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 425px) {
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* DARK THEME */
+.dark {
+  background-color: rgba(14, 14, 14, 0.946);
+  color: white;
+}

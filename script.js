@@ -1160,40 +1160,40 @@ let user1 = {
 // 1)BUBBLING PHASE 0 (default) : event travels from target element to root element
 // 2)CAPTURING PHASE 1 : event travels from root element to target element
 
-const section = document.querySelector("section")
-const article = document.querySelector("article")
-const div = document.querySelector("div")
+// const section = document.querySelector("section")
+// const article = document.querySelector("article")
+// const div = document.querySelector("div")
 
-section.addEventListener("click",(e)=>{
-  e.stopPropagation()
-  section.style.backgroundColor="yellow"
-  console.log("section");
-},0)
+// section.addEventListener("click",(e)=>{
+//   e.stopPropagation()
+//   section.style.backgroundColor="yellow"
+//   console.log("section");
+// },0)
 
-article.addEventListener("click",(e)=>{
-  e.stopPropagation()
-  article.style.backgroundColor="red"
-  console.log("article");
-},0)
+// article.addEventListener("click",(e)=>{
+//   e.stopPropagation()
+//   article.style.backgroundColor="red"
+//   console.log("article");
+// },0)
 
-//! stopPropagtion() : 
-// prevents further propagation of the current event in the capturing and bubbling phases.
+// //! stopPropagtion() : 
+// // prevents further propagation of the current event in the capturing and bubbling phases.
 
-//! stopImmediatePropagation() : 
-// stops event to propagate either in bubbling or capturing phase and it also prevents several listeners that are attached to the same element for the same event type to get called
+// //! stopImmediatePropagation() : 
+// // stops event to propagate either in bubbling or capturing phase and it also prevents several listeners that are attached to the same element for the same event type to get called
 
-div.addEventListener("click",(e)=>{
-  e.stopImmediatePropagation()
-  div.style.backgroundColor="orange"
-  console.log("div");
-},0)
+// div.addEventListener("click",(e)=>{
+//   e.stopImmediatePropagation()
+//   div.style.backgroundColor="orange"
+//   console.log("div");
+// },0)
 
-div.addEventListener("click",(e)=>{
-  console.log("click 2");
-},0)
+// div.addEventListener("click",(e)=>{
+//   console.log("click 2");
+// },0)
 
-div.addEventListener("click",(e)=>{
-  console.log("click 3");
-},0)
+// div.addEventListener("click",(e)=>{
+//   console.log("click 3");
+// },0)
 
 
